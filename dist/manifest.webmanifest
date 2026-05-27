@@ -1,0 +1,16 @@
+{
+  "name": "NatuPet Digital",
+  "short_name": "NatuPet",
+  "description": "Trazabilidad y cálculo nutricional para snacks naturales.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDFBF7",
+  "theme_color": "#2D5A27",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
