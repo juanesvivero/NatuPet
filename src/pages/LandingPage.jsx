@@ -61,7 +61,12 @@ export function LandingPage() {
         <div className="absolute right-0 top-0 -mr-20 -mt-20 h-80 w-80 rounded-full bg-sage/20 blur-3xl pointer-events-none" />
         
         <div className="relative z-10 mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-sage/35 border border-botanical/15 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-botanical">
+          <img
+            src="/logo.png"
+            alt="NatuPet Logo"
+            className="mx-auto h-28 w-28 object-contain rounded-3xl bg-white p-2 shadow-soft sm:h-40 sm:w-40"
+          />
+          <span className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-sage/35 border border-botanical/15 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-botanical">
             🌱 Nutrición Natural de Alta Gama
           </span>
           <h1 className="mt-6 text-3xl font-black leading-tight tracking-tight text-ink sm:text-5xl">
