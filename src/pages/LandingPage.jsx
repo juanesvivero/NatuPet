@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowRight, Eye, Sparkles, Cpu, QrCode, Search, Calculator, CheckCircle2, Mail, User, Phone, Smartphone, AlertCircle } from 'lucide-react';
+import { ArrowRight, Eye, Sparkles, Cpu, QrCode, Search, Calculator, CheckCircle2, Mail, User, Phone, AlertCircle } from 'lucide-react';
 import { snackLines } from '../data/mockData';
 
 export function LandingPage() {
@@ -13,6 +13,14 @@ export function LandingPage() {
   const scrollToForm = (e) => {
     e.preventDefault();
     const element = document.getElementById('early-access-form');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const scrollToCatalog = (e) => {
+    e.preventDefault();
+    const element = document.getElementById('catalog-section');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -54,31 +62,37 @@ export function LandingPage() {
         
         <div className="relative z-10 mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-sage/35 border border-botanical/15 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-botanical">
-            🚀 Lanzamiento Beta en Ecuador
+            🌱 Nutrición Natural de Alta Gama
           </span>
           <h1 className="mt-6 text-3xl font-black leading-tight tracking-tight text-ink sm:text-5xl">
-            Estamos construyendo una nueva forma de alimentar perros y gatos: más clara, saludable y personalizada.
+            Una nueva era en la alimentación de perros y gatos: transparente, saludable y 100% personalizada.
           </h1>
           <p className="mt-6 text-sm font-semibold leading-relaxed text-ink/65 sm:text-base">
-            Nutrición natural y transparente para mascotas. Deja atrás los químicos industriales y las porciones al azar. Sé parte del cambio desde el inicio.
+            Snacks funcionales formulados por expertos con trazabilidad digital interactiva por lote. Erradica los químicos industriales y las porciones al azar. Dale a tu mascota el bienestar de lujo que merece.
           </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <button
               onClick={scrollToForm}
               className="group inline-flex min-h-14 items-center justify-center gap-2.5 rounded-2xl bg-botanical px-8 text-sm font-black text-cream shadow-md transition duration-200 hover:-translate-y-0.5 hover:bg-moss hover:shadow-lg active:translate-y-0"
             >
-              <span>Únete a la beta cerrada</span>
+              <span>Personalizar Alimentación</span>
               <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-1 stroke-[3]" />
+            </button>
+            <button
+              onClick={scrollToCatalog}
+              className="group inline-flex min-h-14 items-center justify-center gap-2.5 rounded-2xl border border-oat bg-white px-8 text-sm font-black text-ink shadow-sm transition duration-200 hover:-translate-y-0.5 hover:border-sage hover:bg-cream active:translate-y-0"
+            >
+              <span>Explorar Colecciones</span>
             </button>
           </div>
         </div>
       </section>
 
-      {/* 2. El Problema (Visual y Corto) */}
+      {/* 2. El Problema */}
       <section className="space-y-8">
         <div className="text-center">
           <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-earth">La realidad actual</p>
-          <h2 className="mt-2 text-3xl font-black text-ink">¿Qué está mal con la comida comercial?</h2>
+          <h2 className="mt-2 text-3xl font-black text-ink">La crisis de la alimentación industrial</h2>
         </div>
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -88,9 +102,9 @@ export function LandingPage() {
                 ✕
               </span>
               <div>
-                <h3 className="text-base font-black text-ink">Ingredientes poco claros</h3>
+                <h3 className="text-base font-black text-ink">Ingredientes oscuros</h3>
                 <p className="mt-1.5 text-xs leading-relaxed text-ink/60">
-                  Etiquetas confusas con subproductos de baja calidad, conservantes químicos ocultos y rellenos vacíos que asustan a los tutores responsables.
+                  Etiquetas confusas con subproductos de baja calidad, conservantes químicos ocultos y rellenos vacíos que comprometen la salud de tu mascota a largo plazo.
                 </p>
               </div>
             </div>
@@ -104,7 +118,7 @@ export function LandingPage() {
               <div>
                 <h3 className="text-base font-black text-ink">Comida ultraprocesada</h3>
                 <p className="mt-1.5 text-xs leading-relaxed text-ink/60">
-                  Alimentos sometidos a extremas presiones y temperaturas que destruyen las vitaminas, enzimas y nutrientes esenciales de la comida real.
+                  Alimentos sometidos a extremas presiones y temperaturas que destruyen por completo las vitaminas, enzimas y nutrientes esenciales de la comida real.
                 </p>
               </div>
             </div>
@@ -116,9 +130,9 @@ export function LandingPage() {
                 ✕
               </span>
               <div>
-                <h3 className="text-base font-black text-ink">Marcas genéricas</h3>
+                <h3 className="text-base font-black text-ink">Marcas genéricas de volumen</h3>
                 <p className="mt-1.5 text-xs leading-relaxed text-ink/60">
-                  Piensos industriales masivos diseñados para el almacenamiento prolongado en perchas, priorizando el volumen comercial sobre el bienestar de tu mascota.
+                  Piensos industriales masivos diseñados para el almacenamiento prolongado en perchas, priorizando la vida útil comercial sobre el bienestar real de los animales.
                 </p>
               </div>
             </div>
@@ -130,9 +144,9 @@ export function LandingPage() {
                 ✕
               </span>
               <div>
-                <h3 className="text-base font-black text-ink">Nula personalización</h3>
+                <h3 className="text-base font-black text-ink">Cero personalización</h3>
                 <p className="mt-1.5 text-xs leading-relaxed text-ink/60">
-                  Tablas genéricas impresas en sacos que dosifican porciones al azar, ignorando la edad, peso exacto y nivel de actividad individual de tu mascota.
+                  Tablas genéricas impresas al dorso del saco que dosifican porciones promedio, ignorando las necesidades metabólicas individuales de cada mascota.
                 </p>
               </div>
             </div>
@@ -140,13 +154,13 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* 3. La visión de NatuPet */}
+      {/* 3. La visión de NatuPet (El Compromiso) */}
       <section className="space-y-8">
         <div className="text-center">
           <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-earth">Nuestra Filosofía</p>
-          <h2 className="mt-2 text-3xl font-black text-ink">La visión de NatuPet</h2>
+          <h2 className="mt-2 text-3xl font-black text-ink">El Compromiso NatuPet</h2>
           <p className="mx-auto mt-2 max-w-md text-xs font-semibold leading-relaxed text-ink/55">
-            No somos una corporación fría; somos un proyecto moderno y honesto en plena construcción que cree en la tecnología y la salud real.
+            Reescribimos los estándares de la nutrición para mascotas fusionando el rigor de la ciencia nutricional con la honestidad de la tecnología de trazabilidad.
           </p>
         </div>
 
@@ -155,9 +169,9 @@ export function LandingPage() {
             <span className="grid h-12 w-12 place-items-center rounded-2xl bg-sage/40 text-botanical">
               <Sparkles size={22} />
             </span>
-            <h3 className="mt-5 text-lg font-black text-ink">Ingredientes Reales</h3>
+            <h3 className="mt-5 text-lg font-black text-ink">Grado Humano</h3>
             <p className="mt-2 text-xs font-semibold leading-relaxed text-ink/60">
-              100% naturales, frescos y cosechados en el campo ecuatoriano. Nutrientes puros sin conservantes añadidos.
+              Ingredientes 100% naturales, frescos y procedentes de pequeños productores ecuatorianos auditados de forma directa.
             </p>
           </div>
 
@@ -167,7 +181,7 @@ export function LandingPage() {
             </span>
             <h3 className="mt-5 text-lg font-black text-ink">Transparencia Radical</h3>
             <p className="mt-2 text-xs font-semibold leading-relaxed text-ink/60">
-              Uso de tecnología de trazabilidad por lote mediante QR. Conoce la procedencia exacta y el porqué de cada ingrediente.
+              Tecnología de trazabilidad única por lote mediante QR. Conoce la procedencia, fecha exacta y propósito biológico de cada ingrediente.
             </p>
           </div>
 
@@ -175,21 +189,21 @@ export function LandingPage() {
             <span className="grid h-12 w-12 place-items-center rounded-2xl bg-amber-50 border border-amber-200 text-amber-800">
               <Cpu size={22} />
             </span>
-            <h3 className="mt-5 text-lg font-black text-ink">Nutrición + Tecnología</h3>
+            <h3 className="mt-5 text-lg font-black text-ink">Tecnología Nutricional</h3>
             <p className="mt-2 text-xs font-semibold leading-relaxed text-ink/60">
-              Certeza matemática en la dosificación. Algoritmos personalizados para calcular la porción diaria fit exacta sin sobrealimentar.
+              Certeza matemática en la dosificación. Algoritmos inteligentes para calcular la porción diaria fit exacta sin sobrealimentación.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 4. Conceptos visuales (Mockups / Productos de la Beta) */}
+      {/* 4. Conceptos visuales (Catálogo de Líneas Activas) */}
       <section id="catalog-section" className="space-y-8">
         <div className="text-center">
-          <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-earth">Identidad Visual & Conceptos</p>
-          <h2 className="mt-2 text-3xl font-black text-ink">Líneas Funcionales en Desarrollo</h2>
+          <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-earth">Portafolio Premium</p>
+          <h2 className="mt-2 text-3xl font-black text-ink">Líneas de Snacks Funcionales</h2>
           <p className="mx-auto mt-2 max-w-md text-xs font-semibold leading-relaxed text-ink/55">
-            Previsualiza los conceptos de empaque y fórmulas que estamos estructurando para el lanzamiento. Puedes ver un prototipo interactivo de trazabilidad en cada uno.
+            Descubre nuestro portafolio de snacks premium activos. Escanea la trazabilidad digital para conocer su ficha de calidad y calcular su ración.
           </p>
         </div>
 
@@ -205,7 +219,7 @@ export function LandingPage() {
                 </Badge>
                 <h3 className="mt-4 text-xl font-black text-ink">{snack.shortName}</h3>
                 <p className="mt-1 text-[9px] font-extrabold uppercase tracking-wider text-earth leading-none">
-                  Fórmula conceptual: {snack.lineName}
+                  Fórmula Activa: {snack.lineName}
                 </p>
                 <p className="mt-4 text-xs font-semibold leading-relaxed text-ink/60">
                   {snack.benefit.detail}
@@ -217,7 +231,7 @@ export function LandingPage() {
                   href={`#/lote/${snack.id}`}
                   className="inline-flex items-center gap-1 text-xs font-black text-botanical hover:text-moss transition"
                 >
-                  Probar Prototipo QR <ArrowRight size={12} />
+                  Verificar Trazabilidad <ArrowRight size={12} />
                 </a>
               </div>
             </div>
@@ -225,7 +239,7 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* 5. Early Access / Formulario (La parte más importante) */}
+      {/* 5. Early Access / Formulario (Club NatuPet) */}
       <section id="early-access-form" className="mx-auto max-w-xl scroll-mt-20">
         <div className="rounded-3xl border border-oat bg-white p-6 shadow-soft sm:p-8">
           {submitted ? (
@@ -233,9 +247,9 @@ export function LandingPage() {
               <span className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-sage text-botanical">
                 <CheckCircle2 size={32} className="stroke-[2.5]" />
               </span>
-              <h3 className="text-2xl font-black text-ink">¡Ya eres parte de la beta!</h3>
+              <h3 className="text-2xl font-black text-ink">¡Bienvenido a la familia!</h3>
               <p className="text-sm font-semibold leading-relaxed text-ink/65">
-                Gracias, <span className="font-black text-botanical">{name}</span>. Hemos guardado tus datos para darte acceso prioritario. Te notificaremos al correo <span className="font-bold text-ink">{email}</span> tan pronto abramos el primer lote en Ecuador.
+                ¡Gracias por registrar a <span className="font-black text-botanical">{name}</span>! Hemos guardado su perfil nutricional de forma segura. Te enviaremos guías de nutrición personalizadas elaboradas por veterinarios y promociones exclusivas directamente a tu correo: <span className="font-bold text-ink">{email}</span>.
               </p>
               <button
                 onClick={() => {
@@ -246,18 +260,18 @@ export function LandingPage() {
                 }}
                 className="btn-secondary w-full"
               >
-                Registrar otro correo
+                Registrar otra mascota
               </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="text-center">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-oat px-2.5 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-earth border border-earth/10">
-                  Comunidad Inicial
+                  Club NatuPet
                 </span>
-                <h3 className="mt-3 text-2xl font-black text-ink">Solicitar Acceso Anticipado</h3>
+                <h3 className="mt-3 text-2xl font-black text-ink">Registra a tu Mascota</h3>
                 <p className="mt-1 text-xs font-semibold leading-relaxed text-ink/50">
-                  Los cupos para el lote beta en Ecuador son limitados. Asegura tu lugar hoy.
+                  Obtén guías de alimentación de autor, alertas de calidad y beneficios exclusivos del club.
                 </p>
               </div>
 
@@ -346,7 +360,7 @@ export function LandingPage() {
               </div>
 
               <button type="submit" className="btn-primary w-full mt-4">
-                <span>Registrarse en Early Access</span>
+                <span>Registrar Mascota & Unirse</span>
                 <ArrowRight size={16} className="stroke-[2.5]" />
               </button>
             </form>
@@ -363,10 +377,10 @@ export function LandingPage() {
         </div>
         <div className="flex flex-col items-center gap-2">
           <p className="text-[10px] font-extrabold uppercase tracking-wider text-ink/30">
-            © {new Date().getFullYear()} NatuPet Digital.
+            © {new Date().getFullYear()} NatuPet Digital. Todos los derechos reservados.
           </p>
           <span className="inline-flex items-center rounded-full bg-sage/35 border border-botanical/15 px-3 py-1 text-[9px] font-black uppercase tracking-wider text-botanical">
-            Próximamente en Ecuador 🇪🇨
+            Orgullosamente Elaborado en Ecuador 🇪🇨
           </span>
         </div>
       </footer>
