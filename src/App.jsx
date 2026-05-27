@@ -57,7 +57,7 @@ export default function App() {
   const snack = getSnackById(route.snackId);
 
   return (
-    <AppShell currentPage={route.page}>
+    <AppShell>
       {route.page === 'landing' ? (
         <LandingPage />
       ) : route.page === 'calculator' ? (
@@ -68,6 +68,5 @@ export default function App() {
     </AppShell>
   );
 }
-
 
 

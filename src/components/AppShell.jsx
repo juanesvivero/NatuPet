@@ -1,3 +1,5 @@
+import natupetLogo from '../assets/brand/natupet-logo.png';
+
 export function AppShell({ children }) {
   return (
     <div className="min-h-screen bg-cream text-ink">
@@ -5,9 +7,12 @@ export function AppShell({ children }) {
         <div className="mx-auto flex max-w-5xl items-center px-4 py-3">
           <a href="#/" className="block transition duration-200 hover:scale-[1.02]" aria-label="Ir al inicio">
             <img
-              src="/logo.png"
+              src={natupetLogo}
               alt="NatuPet Logo"
-              className="h-11 w-11 object-contain rounded-xl bg-white p-0.5 shadow-sm"
+              width="900"
+              height="222"
+              decoding="async"
+              className="h-10 w-auto object-contain sm:h-11"
             />
           </a>
         </div>

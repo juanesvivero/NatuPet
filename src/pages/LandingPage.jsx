@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { ArrowRight, Eye, Sparkles, Cpu, QrCode, Search, Calculator, CheckCircle2, Mail, User, Phone, AlertCircle } from 'lucide-react';
+import { ArrowRight, Eye, Sparkles, Cpu, CheckCircle2, Mail, User, Phone, AlertCircle } from 'lucide-react';
+import natupetLogo from '../assets/brand/natupet-logo.png';
+import { Badge } from '../components/Badge';
 import { snackLines } from '../data/mockData';
 
 export function LandingPage() {
@@ -62,9 +64,13 @@ export function LandingPage() {
         
         <div className="relative z-10 mx-auto max-w-2xl text-center">
           <img
-            src="/logo.png"
+            src={natupetLogo}
             alt="NatuPet Logo"
-            className="mx-auto h-28 w-28 object-contain rounded-3xl bg-white p-2 shadow-soft sm:h-40 sm:w-40"
+            width="900"
+            height="222"
+            fetchPriority="high"
+            decoding="async"
+            className="mx-auto h-auto w-full max-w-[340px] object-contain sm:max-w-[520px]"
           />
           <span className="mt-5 inline-flex items-center gap-1.5 rounded-full bg-sage/35 border border-botanical/15 px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest text-botanical">
             🌱 Nutrición Natural de Alta Gama
@@ -390,19 +396,5 @@ export function LandingPage() {
         </div>
       </footer>
     </div>
-  );
-}
-
-function Badge({ children, tone = 'green' }) {
-  const tones = {
-    green: 'bg-sage/40 border border-botanical/20 text-botanical',
-    light: 'bg-white/80 border border-oat/80 text-ink/80 backdrop-blur-sm',
-    earth: 'bg-oat/50 border border-earth/25 text-earth'
-  };
-
-  return (
-    <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-[9px] font-extrabold uppercase tracking-wider ${tones[tone]}`}>
-      {children}
-    </span>
   );
 }
